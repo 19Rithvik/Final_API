@@ -29,7 +29,7 @@ class Product(Base):
     price = Column(Float, nullable=False)
     quantity = Column(Integer, nullable=False)
     description = Column(String, nullable=True)
-    category = Column(String, nullable=True)
+    category = Column(String, nullable=True) #include after 1st migration
 
     __table_args__ = (UniqueConstraint('name', name='uq_product_name'),)  # Unique constraint
 
