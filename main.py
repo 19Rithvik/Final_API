@@ -61,6 +61,10 @@ def get_db():
     finally:
         db.close()
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Product REST API"}
+
 # Create a product with proper error handling
 @app.post("/products/", response_model=ProductResponse)
 def create_product(product: ProductCreate = Body(...), db: Session = Depends(get_db)):
