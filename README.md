@@ -19,7 +19,8 @@ pytest
 httpx
 
 How to run :
- 1) Run the alembic init alembic command to create alembic folder and check the detailed documentation for changing the code inside init and env.py file
- 2) now create initial migration by running alembic --autogenerate -m "inital migration"
- 3) run alembic upgrade head
- 4) now either run uvicorn main:app --reload or run pytest test.py to test the API
+1 Run the command alembic init alembic to create the Alembic folder, and check the detailed documentation for modifying the code inside the init.py and env.py files.
+2 Create the initial migration by running alembic revision --autogenerate -m "initial migration".
+3 Run alembic upgrade head.
+4 Create another migration with alembic revision --autogenerate -m "add column category" and again run alembic upgrade head.
+5 After creating the two migrations, either run uvicorn main:app --reload or run pytest test.py to test the API.
